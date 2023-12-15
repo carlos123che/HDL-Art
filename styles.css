@@ -1,0 +1,769 @@
+:root {
+  --white: #fff;
+  --light-gray: #f4f2f2;
+  --dark-gray: #5f5f5f;
+  --dark-gray2: #c5c1c1;
+  --accent-color: #d0c1ea;
+  --accent-color2: #b062ff;
+  --accent-color3: #f5f3f7;
+
+  --heading3-font: "Titillium Web", sans-serif;
+  /* --heading3-font: 'Caveat', cursive; */
+  --heading2-font: "Caveat", cursive;
+  --heading-font: "Lobster Two", sans-serif;
+  --body-font: "Open Sans", sans-serif;
+  --opciones: "Montserrat", sans-serif;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: var(--light-gray);
+  margin-top: -1vh;
+  padding: 1em;
+  width: 20vw;
+  height: 95vh;
+  float: left;
+  position: fixed;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 2em;
+  padding: 0;
+}
+
+nav li {
+  padding: 1.2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-family: var(--opciones);
+  font-size: large;
+  margin-left: 4vw;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+nav img {
+  width: 10vw;
+  margin-left: 3vw;
+  margin-top: 3em;
+}
+
+/* Añade estilos para las opciones de categorías */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 35vh;
+  left: 13.5vw;
+  /* Aparecerá a la derecha del botón */
+  background-color: var(--light-gray);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  width: 10.5vw;
+  max-height: 50vh;
+  z-index: 20;
+  overflow: auto;
+}
+
+/* Modifica los estilos al pasar el ratón sobre la opción "Categories" */
+.dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 20;
+}
+
+/* Añade estilos para los enlaces de las opciones de categorías */
+.dropdown-content a {
+  display: block;
+  padding: 0.3em;
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-family: var(--opciones);
+  font-size: large;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+  word-wrap: break-word;
+}
+
+/* Estilos adicionales al pasar el ratón sobre las opciones de categorías */
+.dropdown-content a:hover {
+  background-color: var(--accent-color);
+  color: var(--white);
+}
+
+section {
+  margin-left: 22vw;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+
+#art {
+  margin-left: 24vw;
+  width: 70vw;
+  padding-top: 1.5em;
+}
+
+.art-main {
+  display: flex;
+}
+
+.art-img-1 {
+  max-height: 70vh;
+}
+
+.art-title {
+  padding: 0;
+  margin: 0 0 0 3vw;
+  font-family: var(--heading2-font);
+  font-weight: bolder;
+  font-size: 7vh;
+  color: var(--accent-color2);
+  /* text-shadow: 2px 2px 2px var(--accent-color); */
+}
+
+.art-subtitle {
+  margin-left: 3vw;
+  font-family: var(--heading3-font);
+  font-weight: bolder;
+  font-size: 3vh;
+}
+
+.art-materials {
+  margin-left: 3vw;
+  margin-top: -0.5vw;
+  font-family: var(--body-font);
+  font-size: 1em;
+}
+
+.art-description {
+  margin-top: 1.5vw;
+  font-family: var(--body-font);
+  font-size: 1em;
+  margin-left: 3vw;
+}
+
+.art-description-important2 {
+  margin-top: 1.5vw;
+  font-family: var(--body-font);
+  font-size: 1em;
+  margin-left: 1vw;
+  margin-right: 2em;
+  font-weight: 800;
+}
+
+#art h2 {
+  font-family: var(--heading2-font);
+  font-weight: 600;
+  font-size: 8vh;
+  text-shadow: 2px 2px 2px var(--accent-color);
+  margin-top: 0;
+}
+
+.image-container1 {
+  position: relative;
+  width: 20vw;
+  height: 75vh;
+  background-image: url("img/Home1.png");
+  /* reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  /* asegura que la imagen cubra todo el div */
+  background-position: center;
+  /* posiciona la imagen en el centro */
+  background-repeat: no-repeat;
+  /* evita la repetición de la imagen */
+  color: white;
+  /* color de texto para mejorar la legibilidad, ajusta según s*/
+}
+
+.image-container1 h4 {
+  position: relative;
+  top: 68vh;
+  left: 0.5vw;
+  font-family: var(--heading-font);
+  font-weight: bold;
+  font-size: 1.7em;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  transition: color 0.7s ease;
+}
+
+.image-container1:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-container1:hover {
+  cursor: pointer;
+  transition: box-shadow 0.8s ease;
+  box-shadow: 0 0 15px var(--dark-gray);
+  color: var(--accent-color);
+}
+
+.image-container2 {
+  position: relative;
+  width: 51vw;
+  height: 75vh;
+  transform: translate(22vw, -82vh);
+  background-image: url("img/Home2.png");
+  /* reemplaza con la ruta de tu imagen */
+  background-size: cover;
+  /* asegura que la imagen cubra todo el div */
+  background-position: center;
+  /* posiciona la imagen en el centro */
+  background-repeat: no-repeat;
+  /* evita la repetición de la imagen */
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.image-container2 h4 {
+  position: relative;
+  top: 67vh;
+  left: 1vw;
+  font-family: var(--heading-font);
+  font-size: 2.3em;
+  font-weight: bold;
+  transition: color 0.9s ease;
+}
+
+.image-container2:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-container2:hover {
+  cursor: pointer;
+  transition: box-shadow 0.9s ease;
+  box-shadow: 0 0 15px var(--dark-gray);
+  color: var(--accent-color);
+}
+
+.image-container3 {
+  width: 45vw;
+  height: 75vh;
+  transform: translate(0vw, -81vh);
+  background-image: url("img/Home3.png");
+  /* reemplaza con la ruta de tu imagen */
+  background-size: 100% 100%;
+  /* asegura que la imagen cubra todo el div */
+  background-position: center;
+  /* posiciona la imagen en el centro */
+  background-repeat: no-repeat;
+  /* evita la repetición de la imagen */
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.image-container3 h4 {
+  position: relative;
+  top: 67.5vh;
+  left: 1vw;
+  font-family: var(--heading-font);
+  font-size: 1.8em;
+  font-weight: bold;
+  transition: color 0.9s ease;
+}
+
+.image-container3:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-container3:hover {
+  cursor: pointer;
+  transition: box-shadow 0.8s ease;
+  box-shadow: 0 0 15px var(--dark-gray);
+  color: var(--accent-color);
+}
+
+.image-container4 {
+  width: 26vw;
+  height: 35vh;
+  transform: translate(47vw, -162.5vh);
+  background-image: url("img/Home4.png");
+  /* reemplaza con la ruta de tu imagen */
+  background-size: 100% 100%;
+  /* asegura que la imagen cubra todo el div */
+  background-position: center;
+  /* posiciona la imagen en el centro */
+  background-repeat: no-repeat;
+  /* evita la repetición de la imagen */
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.image-container4 h4 {
+  position: relative;
+  top: 27vh;
+  left: 1vw;
+  font-family: var(--heading-font);
+  font-size: 2.1em;
+  font-weight: bold;
+  transition: color 0.9s ease;
+}
+
+.image-container4:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-container4:hover {
+  cursor: pointer;
+  transition: box-shadow 0.8s ease;
+  box-shadow: 0 0 15px var(--dark-gray);
+  color: var(--accent-color);
+}
+
+.image-container5 {
+  background-color: red;
+  width: 26vw;
+  height: 35vh;
+  transform: translate(47vw, -163.5vh);
+  background-image: url("img/Home5.png");
+  /* reemplaza con la ruta de tu imagen */
+  background-size: 100% 100%;
+  /* asegura que la imagen cubra todo el div */
+  background-position: center;
+  /* posiciona la imagen en el centro */
+  background-repeat: no-repeat;
+  /* evita la repetición de la imagen */
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.image-container5 h4 {
+  position: relative;
+  top: 28vh;
+  left: 1vw;
+  font-family: var(--heading-font);
+  font-size: 2.1em;
+  font-weight: bold;
+  transition: color 0.9s ease;
+}
+
+.image-container5:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-container5:hover {
+  cursor: pointer;
+  transition: box-shadow 0.8s ease;
+  box-shadow: 0 0 15px var(--dark-gray);
+  color: var(--accent-color);
+}
+
+.texto-about {
+  width: 40%;
+  padding: 2em;
+  margin-top: 15vh;
+  margin-right: 2em;
+}
+
+.texto-about h4 {
+  color: var(--accent-color2);
+  font-family: var(--opciones);
+  font-size: 1.3em;
+  margin-bottom: 0;
+}
+
+.texto-about h2 {
+  color: var(--dark-gray);
+  font-family: var(--heading2-font);
+  font-size: 3em;
+  margin-top: 0.5em;
+}
+
+.texto-about p {
+  font-family: var(--body-font);
+  color: var(--dark-gray);
+}
+
+.texto-about button {
+  background-color: var(--white);
+  width: 12em;
+  height: 3em;
+  margin-top: 2em;
+  color: var(--dark-gray);
+  border: solid 1px var(--dark-gray);
+  font-family: var(--heading3-font);
+}
+
+.texto-about button:hover {
+  color: black;
+  border: solid 1px black;
+  background-color: var(--light-gray);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.imagen-about {
+  width: 60%;
+  height: 100%;
+}
+
+.imagen-grande {
+  width: 40vw;
+  height: 70vh;
+  margin-top: 10vh;
+  cursor: pointer;
+  filter: brightness(70%) contrast(110%);
+  border-radius: 1em;
+}
+
+.texto-imagen-grande {
+  background-color: var(--accent-color2);
+  position: relative;
+  top: -12vh;
+  left: -2vw;
+  width: 24vw;
+  height: 15vh;
+  border-radius: 0.5em;
+  color: var(--white);
+}
+
+.texto-imagen-grande p {
+  font-family: var(--heading3-font);
+  padding: 0.8em;
+  font-weight: ligth;
+}
+
+#about {
+  display: flex;
+  position: relative;
+  top: 2vh;
+  left: 24vw;
+  width: 74vw;
+  height: 93vh;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 2vh;
+  left: 24vw;
+  width: 74vw;
+  height: 93vh;
+}
+
+#contact h2 {
+  font-family: var(--heading3-font);
+  font-size: 3em;
+  margin: 0;
+}
+
+#contact p {
+  width: 60%;
+  font-family: var(--body-font);
+  text-align: center;
+}
+
+#contact .formulario {
+  margin-top: 1em;
+}
+
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.label-form {
+  font-family: var(--opciones);
+  font-size: 1em;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: var(--opciones);
+}
+
+/* Estilo del rectángulo con flecha */
+.input-group::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  rotate: calc(90px);
+  border-color: var(--accent-color) transparent transparent transparent;
+  top: 5px;
+  left: -1.5em;
+}
+
+.contact-me-btn {
+    background-color: var(--dark-gray);
+    width: 100%;
+    height: 3em;
+    margin-top: 1em;
+    color: var(--white);
+    border: solid 1px var(--dark-gray);
+    font-family: var(--opciones);
+    font-size: 1.1em;
+    transition: background-color 0.5s ease-in, font-weight  0.5s ease-in;
+  }
+
+  
+.contact-me-btn:hover {
+  color: black;
+  border: solid 1px black;
+  background-color: var(--accent-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* gallery */
+
+#gallery{
+    padding: 2em;
+    height: 90vh;
+}
+  
+  /* Gallery Section Styles */
+  #gallery h2 {
+    padding: 0;
+    margin: 0 0 0 0;
+    font-family: var(--heading2-font);
+    font-weight: 600;
+    font-size: 8vh;
+    text-shadow: 2px 2px 2px var(--accent-color);
+  }
+
+.carousel-container {
+    width: 100%;
+
+}
+  
+.carousel-slide {
+    display: none;
+}
+
+#gallery img {
+    width: 100%;
+    height: 90vh;
+}
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  background-color: var(--dark-gray);
+  font-weight: bold;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 21.5em;
+}
+
+.next-btn {
+  right: 2.4em;
+}
+  /* fin carrusel    */
+
+/* CATEGORIES LANDING  */
+.categories{
+  margin-left: 24.5vw;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.categories .row{
+  height: 40vh;
+  width: 73.5vw;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.categories .row .col{
+  width: 25vw;
+  height: 100%;
+  margin-right: 2em;
+  display: flex;
+  border: solid 1px var(--dark-gray2);
+  
+  background-color: var(--light-gray);
+}
+
+.inside-col{
+  margin-left: 1em;
+  margin-right: 1.3em;
+  margin-top: 1em;
+}
+
+.inside-col h3{
+  font-family: var(--heading3-font);
+  color: var(--accent-color2);
+  text-shadow: 1px 2px 2px var(--accent-color);
+}
+
+.inside-col a{
+  text-decoration: none;
+}
+
+.inside-col p{
+  font-family: var(--heading-font);
+  color: var(--dark-gray);
+}
+
+.categories-img{
+  width: 45%;
+  height: 65%;
+  margin-top: 12%;
+  margin-right: -1em;
+  box-shadow: 2px 2px 10px #5f5f5f;
+}
+
+
+.comission{
+  margin-left: 24vw;
+  width: 73vw;
+  height: 90vh;
+  background-color: black;
+}
+
+/* comission base */
+hr{
+  margin-top: 8em;
+  color: var(--dark-gray);
+}
+
+#art2 {
+  margin-left: 24vw;
+  margin-top: 2em;
+  width: 70vw;
+  padding-top: 1.5em;
+}
+
+.art-main2 {
+  display: flex;
+}
+
+.art-img-2 {
+  max-height: 70vh;
+}
+
+.art-title2 {
+  padding: 0;
+  margin: 0 5vw 0 1vw;
+  font-family: var(--heading2-font);
+  font-weight: bolder;
+  font-size: 7vh;
+  color: var(--accent-color2);
+  /* text-shadow: 2px 2px 2px var(--accent-color); */
+}
+
+.art-subtitle {
+  margin-left: 3vw;
+  font-family: var(--heading3-font);
+  font-weight: bolder;
+  font-size: 3vh;
+}
+
+.art-materials {
+  margin-left: 3vw;
+  margin-top: -0.5vw;
+  font-family: var(--body-font);
+  font-size: 1em;
+}
+
+.art-description3 {
+  margin-top: 1.5vw;
+  font-family: var(--body-font);
+  font-size: 1em;
+  margin-left: 1vw;
+  margin-right: 2em;
+}
+
+.art-description-important {
+  margin-top: 1.5vw;
+  font-family: var(--body-font);
+  font-size: 1em;
+  margin-left: 3vw;
+  font-weight: 800;
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  nav {
+    width: 100%;
+    text-align: center;
+    float: none;
+    /* Modificado: restaura el flujo normal en dispositivos pequeños */
+  }
+
+  section {
+    margin-left: 0;
+    width: 100%;
+    /* Modificado: ocupa todo el ancho en dispositivos pequeños */
+    float: none;
+    /* Modificado: restaura el flujo normal en dispositivos pequeños */
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+}
