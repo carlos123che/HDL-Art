@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/shared/auth.service';
 import { DataService } from 'src/app/shared/data.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { finalize } from 'rxjs';
+import { Category } from 'src/app/model/Category';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,31 +22,36 @@ export class DashboardComponent {
 
   listOfFiles : FileMetaData[] = [];
 
-  // Atrributos de Picture
+/* -- Picture Attributes -- */
+  // Picture List
   picturesList : Picture[] = [];
-  
+  // Picture Object
   pictureObject : Picture = {
     id: '',
     title: '',
     series: '',
-    category: '',
+    category: [],
     price: 0,
     materials : '',
     url: ''
   };
 
-  // Atributos para el formulario
+  // Atribute for picture form
   title: string = '';
   series: string = '';
-  category: string = ''; 
+  category: string[] = []; 
   price: number = 0;
   materials: string = '';
+
+/* -- Cateogires -- */
+  categoryList: Category[] = [];
 
   constructor(private auth : AuthService, private data : DataService, private fireStorage : AngularFireStorage){}
   
   
   ngOnInit(): void{
     this.getAllPictures();
+    this.getAllCategories();
   }
 
 
@@ -55,7 +61,6 @@ export class DashboardComponent {
       this.picturesList = res.map( (e:any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
-        console.log(data);
         return data;
       });
     }, err => {
@@ -64,9 +69,23 @@ export class DashboardComponent {
   }
   
 
+  getAllCategories(){
+    this.data.getAllCategories().subscribe( res => {
+      this.categoryList = res.map( (e:any) => {
+        const data = e.payload.doc.data();
+        data.id = e.payload.doc.id;
+        return data;
+      });
+    }, err => {
+      alert('Error while fetching the data');
+    });
+  }
+
+
+
   addPicture(){
     // Validar vacios
-    if(this.title == '' || this.category == ''){
+    if(this.title == '' || this.category.length == 0){
       alert('Fill all fields.');
     }
     // Settear campos
@@ -98,7 +117,7 @@ export class DashboardComponent {
         // Limpiar datos
         this.title = '';
         this.series = '';
-        this.category = ''; 
+        this.category =  []; 
         this.price = 0;
         this.materials = '';
       });
@@ -109,10 +128,6 @@ export class DashboardComponent {
     }, err =>{
       console.log(err);
     });  
-  }
-
-  updateStudent(){
-
   }
 
   deletePicture(picture : Picture){

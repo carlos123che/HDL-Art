@@ -15,6 +15,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarLoggedComponent } from './components/navbar-logged/navbar-logged.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 
+
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +37,10 @@ import { CategoriesComponent } from './components/categories/categories.componen
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
