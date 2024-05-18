@@ -1,0 +1,11 @@
+.nav-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2em;
+}
+
+.nav-content p {
+    font-size: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

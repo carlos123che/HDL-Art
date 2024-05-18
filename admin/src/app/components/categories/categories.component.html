@@ -1,0 +1,68 @@
+<app-navbar-logged></app-navbar-logged>
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 mt-5">
+        <div class="card border-0 shadow p-3">
+          <div class="form-floating mb-3">
+              <h5 class="text-center text-dark">Add Picture</h5>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control" 
+              id="category"
+              name="category"
+              [(ngModel)] = category
+            />
+            <label for="category">Category</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control" 
+              id="description"
+              name="description"
+              [(ngModel)] = description
+            />
+            <label for="description">Description</label>
+          </div>
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            (click)="addCategory()"
+            >
+                Add Category
+          </button>
+        </div>
+      </div>
+
+
+      <div class="col-md-8 mt-5">
+        <h5 class="text-dark">Category List</h5>
+        <div class="card p-3 shadow">
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let category of categoryList">
+                            <td>{{category.id}}</td>
+                            <td>{{category.category}}</td>
+                            <td>{{category.description}}</td>
+                            <td><button class="btn btn-outline-danger" (click)="deleteCategory(category)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</div>
