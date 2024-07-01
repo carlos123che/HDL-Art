@@ -5,5 +5,6 @@ export interface Picture {
     category: string[], 
     price?: Number,
     materials: string,
-    url? : string
+    url? : string,
+    description : string
 }

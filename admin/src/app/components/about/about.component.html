@@ -1,0 +1,35 @@
+<app-navbar-logged></app-navbar-logged>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <img src="{{about[0].url}}" alt="about" width="80%" height="100%">
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">About</h5>
+                </div>
+                <div class="card-body">
+
+                    <div class="form-floating mb-3">
+                        <input type="file"  accept="image/*" name="file" id="file" class="text-nowrap text-truncate" (change)="selectedFile($event)">
+                      </div>
+                      <div class="progress mt-2">
+                        <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: percentage + '%'}">
+                          {{percentage}}
+                        </div>
+                      </div>
+
+                      
+                    <div class="form-floating mb-3">
+                        <textarea  class="form-control mt-5" id="description" name="description" [(ngModel)]="about[0].description" rows="40"  style="height: 20em;" ></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+
+                <button class="btn  btn-primary"  (click)="editAbout()" >Edit</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -6,6 +6,8 @@ import { DataService } from 'src/app/shared/data.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { finalize } from 'rxjs';
 import { Category } from 'src/app/model/Category';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -33,7 +35,8 @@ export class DashboardComponent {
     category: [],
     price: 0,
     materials : '',
-    url: ''
+    url: '',
+    description: ''
   };
 
   // Atribute for picture form
@@ -42,11 +45,16 @@ export class DashboardComponent {
   category: string[] = []; 
   price: number = 0;
   materials: string = '';
+  description: string = '';
+
 
 /* -- Cateogires -- */
   categoryList: Category[] = [];
 
-  constructor(private auth : AuthService, private data : DataService, private fireStorage : AngularFireStorage){}
+  constructor(private router: Router, 
+              private auth : AuthService, 
+              private data : DataService, 
+              private fireStorage : AngularFireStorage){}
   
   
   ngOnInit(): void{
@@ -57,7 +65,7 @@ export class DashboardComponent {
 
   
   getAllPictures(){
-    this.data.getAllPictures().subscribe( res => {
+    this.data.getAllPictures().subscribe( (res:any) => {
       this.picturesList = res.map( (e:any) => {
         const data = e.payload.doc.data();
         data.id = e.payload.doc.id;
@@ -85,7 +93,12 @@ export class DashboardComponent {
 
   addPicture(){
     // Validar vacios
-    if(this.title == '' || this.category.length == 0){
+    if( this.title == '' || 
+        this.category.length == 0 || 
+        this.materials == '' ||  
+        !this.selectedFiles || 
+        this.selectedFiles.length === 0 ||
+        this.description == '' ){
       alert('Fill all fields.');
     }
     // Settear campos
@@ -95,14 +108,15 @@ export class DashboardComponent {
     this.pictureObject.category = this.category;
     this.pictureObject.price = this.price;
     this.pictureObject.materials = this.materials;
-      
+    this.pictureObject.description = this.description;
+
     // Subir archivo
     this.currentFileUpload = new FileMetaData( this.selectedFiles[0]);
     const path = 'Uploads/' + this.currentFileUpload.file.name;
 
     const storageRef = this.fireStorage.ref(path);
     const uploadTask = storageRef.put(this.selectedFiles[0]);
-
+    
     uploadTask.snapshotChanges().pipe( finalize( () => {
       storageRef.getDownloadURL().subscribe( downloadLink => {
         this.currentFileUpload.id = '';
@@ -120,6 +134,8 @@ export class DashboardComponent {
         this.category =  []; 
         this.price = 0;
         this.materials = '';
+        this.description = '';
+        this.percentage = 0;
       });
       this.ngOnInit();
     })
@@ -128,6 +144,7 @@ export class DashboardComponent {
     }, err =>{
       console.log(err);
     });  
+    
   }
 
   deletePicture(picture : Picture){
@@ -139,5 +156,12 @@ export class DashboardComponent {
   selectedFile(event:any){
     this.selectedFiles = event.target.files;
   }
+
+
+  editPicture(picture : Picture){
+      const userId = picture.id; 
+      this.router.navigate(['/picture', userId]);
+  }
+
 
 } 

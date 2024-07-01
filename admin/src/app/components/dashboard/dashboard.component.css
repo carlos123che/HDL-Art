@@ -6,3 +6,54 @@
     max-height: 200px; /* Ajusta según tus necesidades */
   }
   
+  textarea{
+    height: 50em;
+  }
+
+  .card{
+    width: 90vw;
+  }
+
+  .formu{
+    margin-top: 5em;
+    margin-left: 5em;
+  }
+  .formulario{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+  }
+
+  .form-col{
+    width: 40vw;
+    margin-top: 3em;
+
+  }
+
+  h5{
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 2em;
+  }
+
+
+  .pictures{
+    margin-left: 4.5em;
+  }
+
+
+  .picturesList{
+    margin-bottom: 8em;
+  }
+
+  .btn{
+    width: 100%;
+  }
+  .btn-action{
+    margin: 1em 0;
+    width: 8em;
+  }
+
+  .actions{
+    max-width: 6vw;
+  }

@@ -15,6 +15,10 @@
   --opciones: "Montserrat", sans-serif;
 }
 
+.img-car{
+  object-fit: contain;
+}
+
 /* Navigation Styles */
 nav {
   background-color: var(--light-gray);
@@ -59,13 +63,13 @@ nav img {
   margin-top: 3em;
 }
 
-/* Añade estilos para las opciones de categorías */
+/* Aï¿½ade estilos para las opciones de categorï¿½as */
 .dropdown-content {
   display: none;
   position: absolute;
   top: 35vh;
   left: 13.5vw;
-  /* Aparecerá a la derecha del botón */
+  /* Aparecerï¿½ a la derecha del botï¿½n */
   background-color: var(--light-gray);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   width: 10.5vw;
@@ -74,13 +78,13 @@ nav img {
   overflow: auto;
 }
 
-/* Modifica los estilos al pasar el ratón sobre la opción "Categories" */
+/* Modifica los estilos al pasar el ratï¿½n sobre la opciï¿½n "Categories" */
 .dropdown:hover .dropdown-content {
   display: block;
   z-index: 20;
 }
 
-/* Añade estilos para los enlaces de las opciones de categorías */
+/* Aï¿½ade estilos para los enlaces de las opciones de categorï¿½as */
 .dropdown-content a {
   display: block;
   padding: 0.3em;
@@ -95,7 +99,7 @@ nav img {
   word-wrap: break-word;
 }
 
-/* Estilos adicionales al pasar el ratón sobre las opciones de categorías */
+/* Estilos adicionales al pasar el ratï¿½n sobre las opciones de categorï¿½as */
 .dropdown-content a:hover {
   background-color: var(--accent-color);
   color: var(--white);
@@ -181,9 +185,9 @@ section {
   background-position: center;
   /* posiciona la imagen en el centro */
   background-repeat: no-repeat;
-  /* evita la repetición de la imagen */
+  /* evita la repeticiï¿½n de la imagen */
   color: white;
-  /* color de texto para mejorar la legibilidad, ajusta según s*/
+  /* color de texto para mejorar la legibilidad, ajusta segï¿½n s*/
 }
 
 .image-container1 h4 {
@@ -227,7 +231,7 @@ section {
   background-position: center;
   /* posiciona la imagen en el centro */
   background-repeat: no-repeat;
-  /* evita la repetición de la imagen */
+  /* evita la repeticiï¿½n de la imagen */
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -271,7 +275,7 @@ section {
   background-position: center;
   /* posiciona la imagen en el centro */
   background-repeat: no-repeat;
-  /* evita la repetición de la imagen */
+  /* evita la repeticiï¿½n de la imagen */
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -315,7 +319,7 @@ section {
   background-position: center;
   /* posiciona la imagen en el centro */
   background-repeat: no-repeat;
-  /* evita la repetición de la imagen */
+  /* evita la repeticiï¿½n de la imagen */
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -360,7 +364,7 @@ section {
   background-position: center;
   /* posiciona la imagen en el centro */
   background-repeat: no-repeat;
-  /* evita la repetición de la imagen */
+  /* evita la repeticiï¿½n de la imagen */
   color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
@@ -524,7 +528,7 @@ textarea {
   font-family: var(--opciones);
 }
 
-/* Estilo del rectángulo con flecha */
+/* Estilo del rectï¿½ngulo con flecha */
 .input-group::before {
   content: "";
   position: absolute;
@@ -752,15 +756,15 @@ hr{
     width: 100%;
     text-align: center;
     float: none;
-    /* Modificado: restaura el flujo normal en dispositivos pequeños */
+    /* Modificado: restaura el flujo normal en dispositivos pequeï¿½os */
   }
 
   section {
     margin-left: 0;
     width: 100%;
-    /* Modificado: ocupa todo el ancho en dispositivos pequeños */
+    /* Modificado: ocupa todo el ancho en dispositivos pequeï¿½os */
     float: none;
-    /* Modificado: restaura el flujo normal en dispositivos pequeños */
+    /* Modificado: restaura el flujo normal en dispositivos pequeï¿½os */
   }
 
   nav li {

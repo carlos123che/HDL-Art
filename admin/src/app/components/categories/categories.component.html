@@ -26,6 +26,18 @@
             />
             <label for="description">Description</label>
           </div>
+
+          
+          <div class="form-floating mb-3">
+            <input type="file"  accept="image/*" name="file" id="file" class="text-nowrap text-truncate" (change)="selectedFile($event)">
+          </div>
+          <div class="progress mt-2">
+            <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: percentage + '%'}">
+              {{percentage}}
+            </div>
+          </div>
+
+
           <button
             type="button"
             class="btn btn-outline-primary"
@@ -44,17 +56,17 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th scope="col">Id</th>
                             <th scope="col">Category</th>
                             <th scope="col">Description</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let category of categoryList">
-                            <td>{{category.id}}</td>
                             <td>{{category.category}}</td>
                             <td>{{category.description}}</td>
+                            <td><img src="{{category.url}}" alt="file" style="width: 10em; height: 10em;"></td>
                             <td><button class="btn btn-outline-danger" (click)="deleteCategory(category)">Delete</button></td>
                         </tr>
                     </tbody>

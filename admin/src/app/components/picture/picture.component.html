@@ -1,0 +1,75 @@
+<app-navbar-logged></app-navbar-logged>
+
+<div class="container mt-5 layout">
+   
+    <div class="col imagen-col">
+        <img [src]="picture.url" alt="{{ picture.title }}" class="pictureImage">
+    </div>
+
+    <div class="col data-col">
+        <div class="card card-shadow data-info">
+            <div class="card-header mt-4">
+                <h2 class="text-center">{{ picture.title | uppercase }}</h2>
+            </div>
+            <div class="card-body">
+                
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="title" name="title" [(ngModel)]="title" value="{{picture.title}}" />
+                <label for="title">Title</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="series" name="series" [(ngModel)]="series" value="{{picture.series}}" />
+                <label for="series">Series</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="price" name="price" [(ngModel)]="price" value="{{picture.price}}" />
+                <label for="price">Price</label>
+            </div>
+
+            
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="materials" name="materials" [(ngModel)]="materials" value="{{picture.materials}}" />
+                <label for="materials">Materials</label>
+            </div>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Category</mat-label>
+                <mat-select [(ngModel)]="category" multiple>
+                  <mat-option *ngFor="let category of categoryList" value="{{category.category}}">
+                    {{ category.category }} 
+                  </mat-option>
+                  
+                </mat-select>
+            </mat-form-field>
+
+                <strong class="m-4 categorySaved">{{ picture.category.join(', ')}}</strong> 
+
+            </div>
+
+            <div class="form-floating m-3">
+                <input type="file"  accept="image/*" name="file" id="file" class="text-nowrap text-truncate" (change)="selectedFile($event)">
+            </div>
+            <div class="progress mt-2">
+                <div class="progress-bar progress-bar-info" role="progressbar" attr.aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width: percentage + '%'}">
+                  {{percentage}}
+                </div>
+            </div>
+
+            <div class="form-floating mb-3 mt-4">
+                <textarea  class="form-control mt-5" id="description" name="description" [(ngModel)]="description" rows="20"  style="height: 10em; width: 85%; margin-left: 2em;" ></textarea>
+                <label for="email">Description</label>
+              </div>
+
+            <button class="btn btn-primary" (click)="editPicture()" >Edit</button>
+        </div>
+    </div>
+
+</div>
+<!-- picture.component.html -->
+    <
+  <ng-template #loading>
+    <div>Loading...</div>
+  </ng-template>
+  

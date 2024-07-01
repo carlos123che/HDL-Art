@@ -1,0 +1,109 @@
+<app-navbar-logged></app-navbar-logged>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card mb-5">
+        <div class="card-header">
+          <h4 class="card-title text-center">Create New</h4>
+        </div>
+        <div class="card-body">
+          <!-- title input  -->
+          <div class="mb-4">
+            <label for="title" class="form-label">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Type title"
+              id="title"
+              [(ngModel)]="title"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="exampleDataList" class="form-label">Type</label>
+            <input
+              class="form-control"
+              list="datalistOptions"
+              id="exampleDataList"
+              placeholder="Type to search..."
+              [(ngModel)]="type"
+              (ngModelChange)="onOptionChange($event)"
+            />
+            <datalist id="datalistOptions">
+              <option value="Image"></option>
+              <option value="Link"></option>
+              <option value="Both"></option>
+            </datalist>
+          </div>
+
+          <!-- image input -->
+          <div *ngIf="showImageInput" class="mt-4">
+            <label for="imagen" class="form-label">Image</label>
+            <input
+              type="file"
+              class="form-control"
+              accept="image/*"
+              placeholder="Upload an image"
+              id="imagen"
+              #fileInput
+              (change)="selectedFile($event)"
+            />
+          </div>
+
+          <!-- link input -->
+          <div *ngIf="showLinkInput" class="mt-4">
+            <label for="link" class="form-label">Link</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter a link"
+              id="link"
+              [(ngModel)]="link"
+            />
+          </div>
+
+          <!-- description input -->
+          <div *ngIf="showLinkInput || showImageInput" class="mt-4">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="10"
+              [(ngModel)]="description"
+            ></textarea>
+          </div>
+
+
+          <div *ngIf="showLinkInput || showImageInput" class="mt-4 d-grid gap-2">
+            <button class="btn btn-primary" (click)="saveNew()">Create New</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+      <h3>News</h3>
+
+      <div class="mb-4" *ngFor="let newObject of newsList">
+        <div class="card">
+          <img src="{{newObject.url}}" class="card-img-top"  *ngIf="newObject.type == 'Both'">
+          <img src="{{newObject.url}}" class="card-img-top"  *ngIf="newObject.type == 'Image'">
+          <div class="card-body">
+            <h5 class="card-title text-center">{{newObject.title}}</h5>
+            <p><b>Type: </b>{{newObject.type}}</p>
+            <p *ngIf="newsObject.type == 'Link' || newObject.type == 'Both'"><b>Link: </b>{{newObject.link}}</p>
+            <p class="card-text">{{newObject.description}} siu</p>
+            <div class="d-grid gap-2">
+              <button class="btn btn-danger" (click)="deleteNew(newObject)">Delete</button>
+            </div>
+          </div>
+         
+     
+        </div>
+      </div>
+     
+
+    </div>
+  </div>
+</div>

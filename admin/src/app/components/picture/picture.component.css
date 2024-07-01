@@ -1,0 +1,32 @@
+.pictureImage{
+    width: 50vw;
+    height: 70vh;
+    margin-left: 0;
+    object-fit: contain;
+}
+
+.layout{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 11em;
+    margin-left: 8em;
+}
+
+.imagen-col{
+    width: 70vw;
+    margin-left: 0;
+}
+
+.data-col{
+    width: 30vw;
+}
+
+.data-info{
+    width: 30vw;
+}
+
+.categorySaved{
+    font-size: 1.3em;
+}

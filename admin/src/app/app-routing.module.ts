@@ -6,6 +6,9 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { FileuploadComponent } from './components/fileupload/fileupload.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { PictureComponent } from './components/picture/picture.component';
+import { AboutComponent } from './components/about/about.component';
+import { NewsComponent } from './components/news/news.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -14,7 +17,10 @@ const routes: Routes = [
   { path: 'verify-email', component: VerifyEmailComponent},
   { path: 'forgot-password', component: ForgotPasswordComponent},
   { path: 'upload', component: FileuploadComponent},
-  { path: 'category', component: CategoriesComponent}
+  { path: 'category', component: CategoriesComponent},
+  { path: 'picture/:id', component: PictureComponent},
+  { path: 'about', component: AboutComponent},
+  { path: 'news', component: NewsComponent}
 ];
 
 @NgModule({

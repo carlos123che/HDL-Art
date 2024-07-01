@@ -19,6 +19,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PictureComponent } from './components/picture/picture.component';
+import { AboutComponent } from './components/about/about.component';
+import { NewsComponent } from './components/news/news.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FileuploadComponent,
     NavbarComponent,
     NavbarLoggedComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    PictureComponent,
+    AboutComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
