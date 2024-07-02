@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  /* Fonts */
+  --menu-title-font: "Crimson Text", sans-serif;
+  --primary-font: "Montserrat", sans-serif;
+  --secondary-font: "Playfair Displa", sans-serif ;
+  /* Font Sizes */
+  --menu-title-font-size: 2.7em;
+  --normal-font-size: 1.3em;
+  --small-font-size: 1em;
+  /* Font Weights */
+  --menu-title-font-weight: 700;
+  --normal-font-weight: 400;
+  /* Colors */
+  --menu-title-color: #000000;
+  --primary-color: #A593E0;
+  --secondary-color: #566270;
+  --tertiary-color: #E0E3DA; 
+  --background-color: #FFFFF3;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  

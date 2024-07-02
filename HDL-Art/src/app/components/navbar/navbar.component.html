@@ -1,0 +1,24 @@
+<nav class="navbar">
+    <!-- HDL Menu Title-->
+    <h2 class="menu-title">HDL ART</h2>
+    <!-- Options-->
+     <ul class="options">
+        <li><a href="/home"       class="menu-link" [ngClass]="{'active': this.currentUrl == '/home'}"      > Home       </a></li>
+        <li><a href="/gallery"    class="menu-link" [ngClass]="{'active': this.currentUrl == '/gallery'}"   > Gallery    </a></li>
+        <li><a href="/categories" class="menu-link" [ngClass]="{'active': this.currentUrl == '/categories'}"> Categories </a></li>
+        <li><a href="/about"      class="menu-link" [ngClass]="{'active': this.currentUrl == '/about'}"     > About Me   </a></li>
+        <li><a href="/contact"    class="menu-link" [ngClass]="{'active': this.currentUrl == '/contact'}"   > Contact Me </a></li>
+     </ul>
+     <!-- Social Media -->
+     <div class="social">
+        <a href="https://www.instagram.com/hdlart_/" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.twitter.com" target="_blank" class="social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+     </div>
+
+     <div class="contact">
+        <p class="email">hdlart18@gmail.com</p>
+     </div>
+</nav>
+

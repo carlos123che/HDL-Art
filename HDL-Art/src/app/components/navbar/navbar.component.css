@@ -1,0 +1,73 @@
+.navbar{
+    height: 100vh;
+    width: 20vw;
+}
+
+.menu-title{
+    padding-top: 5vw;
+    margin-top: 0;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-bottom: 8vh;
+    font-family: var(--menu-title-font);
+    font-style: normal;
+    font-weight: var(--menu-title-font-weight);
+    font-size: var(--menu-title-font-size);
+    line-height: 40px;
+    font-optical-sizing: auto;
+    color: var(--menu-title-color);
+}
+
+.options{
+    list-style: none;
+}
+
+.options li{
+    margin-bottom: 4vh;
+    margin-left: 1.3vw;
+    margin-right: 1.3vw;
+}
+
+.menu-link{
+    text-decoration: none;
+    font-family: var(--primary-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--normal-font-weight);
+    color: var(--secondary-color);
+    margin-left: 0;
+}
+
+.menu-link:hover{
+    color: var(--primary-color);
+}
+
+.active{
+    color: var(--primary-color);
+}
+
+.social{
+    margin-top: 8vh;
+    margin-left: 4vw;
+}
+
+.social-icon{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: var(--small-font-size);
+    padding-right: 0.9em;
+}
+
+.social-icon:hover{
+    color: var(--primary-color);
+}
+
+.contact{
+    margin-top: 8vh;
+    margin-left: 4vw;
+}
+
+.email{
+    color: var(--secondary-color);
+    font-family: var(--primary-font);
+    font-size: var(--small-font-size);
+}
