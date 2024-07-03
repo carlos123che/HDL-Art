@@ -3,11 +3,14 @@
     width: 20vw;
 }
 
+.navbar-toggle{
+    display: none;
+}
+
 .menu-title{
-    padding-top: 5vw;
+    padding-top: 11vh;
     margin-top: 0;
     margin-left: 4vw;
-    margin-right: 4vw;
     margin-bottom: 8vh;
     font-family: var(--menu-title-font);
     font-style: normal;
@@ -70,4 +73,111 @@
     color: var(--secondary-color);
     font-family: var(--primary-font);
     font-size: var(--small-font-size);
+}
+
+
+
+/* If screen size is LESS than 1279px wide */
+@media (max-width: 1279px){ 
+    /* Styles! */
+    .navbar{
+        width: 25vw;
+    }
+
+    .options li{
+        margin-left: 0vw;
+    }
+
+    .menu-title{
+        font-size: 2.6em;
+    }
+    
+    .menu-link{
+        font-size: 1.2em;   
+    }
+     
+    .social-icon{
+        font-size: 0.9em;
+    }
+
+    .email{
+        font-size: 0.9em;
+    }
+}
+
+
+/* If screen size is LESS than 912px wide */
+@media (max-width: 912px){ 
+    /* Styles! */
+    .navbar{
+        width: 29vw;
+    }
+
+    .options li{
+        margin-left: -1vw;
+        margin-bottom: 5vh;
+    }
+
+    .menu-title{
+        font-size: 2.5em;
+        padding-top: 13vh;
+    }
+    
+    .menu-link{
+        font-size: 1.5em;  
+        margin-left: 0;
+        padding-left: 0;
+    }
+     
+    .social-icon{
+        font-size: 1.2em;
+    }
+
+    .email{
+        font-size: 0.9em;
+    }
+}
+
+/* If screen size is LESS than 912px wide */
+@media (max-width: 750px){ 
+    .navbar{
+        height: 10vh;
+        width: 100vw;
+    }
+
+    .navbar-toggle{
+        display: block;
+        height: 40px;
+        width: 40px;
+        margin-top: 3vh;
+        margin-left: 8em;
+        background-color: var(--background-color);
+        border: 0px;
+        font-weight: 800;
+        font-size: 1.5em;
+    }
+
+    .navbar-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+    }
+
+    .options{
+        display: none;
+    }
+
+    .social{
+        display: none;
+    }
+
+    .contact{
+        display: none;
+    }
+
+    .menu-title{
+        padding-top: 4vh;
+        font-size: 4em;
+        line-height: 22px;
+    }
 }

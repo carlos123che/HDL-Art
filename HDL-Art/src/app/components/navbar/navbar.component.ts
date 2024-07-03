@@ -9,10 +9,16 @@ import { Router, NavigationEnd } from '@angular/router';
 export class NavbarComponent implements OnInit {
   
   currentUrl: string = '';
+  menuOpen: boolean = false;
 
   constructor(private router: Router ) { }
 
   ngOnInit(): void {
     this.currentUrl = this.router.url;
   }
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+    
 }
